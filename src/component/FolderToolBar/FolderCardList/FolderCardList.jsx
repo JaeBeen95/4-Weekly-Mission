@@ -13,7 +13,6 @@ const FolderCardList = ({ links }) => {
 
   const togglePopover = (id, e) => {
     e.preventDefault();
-    e.stopPropagation();
     setPopoverShows((prev) => ({
       ...prev,
       [id]: !prev[id],
@@ -22,7 +21,6 @@ const FolderCardList = ({ links }) => {
 
   const handleDeleteClick = (id, e) => {
     e.preventDefault();
-    e.stopPropagation();
     setSelectedLinkId(id);
     setModalType("delete");
     setIsModalOpen(true);
@@ -30,7 +28,6 @@ const FolderCardList = ({ links }) => {
 
   const handleAddFolderClick = (id, e) => {
     e.preventDefault();
-    e.stopPropagation();
     setSelectedLinkId(id);
     setModalType("add");
     setIsModalOpen(true);
@@ -44,7 +41,6 @@ const FolderCardList = ({ links }) => {
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
         >
           <div className="card-container">
             <div
