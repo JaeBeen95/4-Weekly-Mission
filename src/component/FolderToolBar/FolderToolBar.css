@@ -64,6 +64,7 @@
   font-weight: 500;
   height: 3.5rem;
   padding: 0 2.4rem;
+  background-color: var(--primary);
 
   @media (min-width: 768px) {
     background-color: transparent;

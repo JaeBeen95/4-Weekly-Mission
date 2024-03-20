@@ -4,7 +4,6 @@ import closeBtn from "../../images/close.svg";
 
 const ModalAdd = ({ folderNameData, closeModal }) => {
   const [isClick, setIsClick] = useState(null);
-  console.log(folderNameData);
 
   const handleClick = (id) => {
     setIsClick(id);
