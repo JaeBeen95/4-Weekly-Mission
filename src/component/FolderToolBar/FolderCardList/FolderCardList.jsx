@@ -5,10 +5,16 @@ import ModalAdd from "../../Modal/ModalAdd";
 import kebab from "../../../images/kebab.svg";
 import "./FolderCardList.css";
 
-const FolderCardList = ({ links }) => {
+const FolderCardList = ({
+  isModalOpen,
+  openModal,
+  closeModal,
+  modalType,
+  changeModalType,
+  links,
+  folderNameData,
+}) => {
   const [popoverShows, setPopoverShows] = useState({});
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalType, setModalType] = useState(null);
   const [selectedLinkId, setSelectedLinkId] = useState(null);
 
   const togglePopover = (id, e) => {
@@ -22,15 +28,15 @@ const FolderCardList = ({ links }) => {
   const handleDeleteClick = (id, e) => {
     e.preventDefault();
     setSelectedLinkId(id);
-    setModalType("delete");
-    setIsModalOpen(true);
+    changeModalType("delete");
+    openModal(true);
   };
 
   const handleAddFolderClick = (id, e) => {
     e.preventDefault();
     setSelectedLinkId(id);
-    setModalType("add");
-    setIsModalOpen(true);
+    changeModalType("add");
+    openModal(true);
   };
 
   return (
@@ -79,10 +85,10 @@ const FolderCardList = ({ links }) => {
       ))}
 
       {isModalOpen && modalType === "delete" && (
-        <ModalDelete setIsModalOpen={setIsModalOpen} linkId={selectedLinkId} />
+        <ModalDelete closeModal={closeModal} linkId={selectedLinkId} />
       )}
       {isModalOpen && modalType === "add" && (
-        <ModalAdd setIsModalOpen={setIsModalOpen} linkId={selectedLinkId} />
+        <ModalAdd closeModal={closeModal} folderNameData={folderNameData} />
       )}
     </div>
   );

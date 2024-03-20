@@ -4,11 +4,7 @@ import kakaoImg from "../../images/kakao.svg";
 import facebookImg from "../../images/facebook.svg";
 import linkImg from "../../images/link.svg";
 
-const ModalShare = ({ setIsModalOpen }) => {
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
+const ModalShare = ({ closeModal }) => {
   const hostAddress = "https://yourdomain.com"; // 각자 주소 바꾸기
   const shareUrl = `${hostAddress}/shared/${1}`; // id값도 바꾸기
   const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
@@ -31,7 +27,12 @@ const ModalShare = ({ setIsModalOpen }) => {
     <>
       <div className="modal-bg"></div>
       <div className="modal-box">
-        <button className="modal-close-btn" onClick={handleCloseModal}>
+        <button
+          className="modal-close-btn"
+          onClick={() => {
+            closeModal();
+          }}
+        >
           <img src={closeBtn} alt="" />
         </button>
         <div className="modal-items">

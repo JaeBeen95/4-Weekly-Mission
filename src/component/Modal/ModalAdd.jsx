@@ -4,10 +4,7 @@ import closeBtn from "../../images/close.svg";
 
 const ModalAdd = ({ folderNameData, closeModal }) => {
   const [isClick, setIsClick] = useState(null);
-
-  const handleCloseModal = () => {
-    closeModal(false);
-  };
+  console.log(folderNameData);
 
   const handleClick = (id) => {
     setIsClick(id);
@@ -17,7 +14,12 @@ const ModalAdd = ({ folderNameData, closeModal }) => {
     <>
       <div className="modal-bg"></div>
       <div className="modal-box">
-        <button className="modal-close-btn" onClick={handleCloseModal}>
+        <button
+          className="modal-close-btn"
+          onClick={() => {
+            closeModal();
+          }}
+        >
           <img src={closeBtn} alt="" />
         </button>
         <div className="modal-items">
@@ -27,7 +29,7 @@ const ModalAdd = ({ folderNameData, closeModal }) => {
           </div>
           <div className="modal-content">
             <div className="modal-folder-list">
-              {folderNameData.map((data) => (
+              {folderNameData?.map((data) => (
                 <button
                   key={data.id}
                   onClick={() => {
