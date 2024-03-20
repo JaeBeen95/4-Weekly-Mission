@@ -1,5 +1,6 @@
 import { ALL } from "../../../utils/utils";
 import "./FolderButton.css";
+import classNames from "classnames";
 
 const FolderButton = ({
   folderNameData,
@@ -9,9 +10,10 @@ const FolderButton = ({
   return (
     <>
       <button
-        className={`folder-button ${
-          selectedButtonName === ALL ? "selected" : ""
-        }`}
+        className={classNames(
+          "folder-button",
+          selectedButtonName === ALL && "selected"
+        )}
         onClick={() => {
           onFolderSelect(ALL);
         }}
@@ -21,9 +23,10 @@ const FolderButton = ({
       {folderNameData.map((button) => (
         <button
           key={button.id}
-          className={`folder-button ${
-            selectedButtonName === button.name ? "selected" : ""
-          }`}
+          className={classNames(
+            "folder-button",
+            selectedButtonName === button.name && "selected"
+          )}
           onClick={() => {
             onFolderSelect(button.id, button.name);
           }}
