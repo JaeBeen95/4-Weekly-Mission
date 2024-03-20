@@ -72,7 +72,7 @@
   }
 }
 
-.container h2 {
+.container .selected-btn {
   font-size: 2rem;
   font-weight: 600;
   grid-area: folder-name;

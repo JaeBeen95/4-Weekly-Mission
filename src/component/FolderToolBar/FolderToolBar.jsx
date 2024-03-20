@@ -60,7 +60,7 @@ const FolderToolBar = ({
             <span>폴더 추가 +</span>
           </button>
         </div>
-        <h2>{selectedButtonName}</h2>
+        <h2 className="selected-btn">{selectedButtonName}</h2>
         {selectedButtonName !== ALL && (
           <div className="icon-button-container">
             <button onClick={handleShareButtonClick}>
