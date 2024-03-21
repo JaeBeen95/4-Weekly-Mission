@@ -1,7 +1,7 @@
 import "./ModalDelete.css";
 import closeBtn from "../../images/close.svg";
 
-const ModalDelete = ({ closeModal }) => {
+const ModalDelete = ({ closeModal, modalTitle, modalButtonName }) => {
   return (
     <>
       <div className="modal-bg"></div>
@@ -11,11 +11,11 @@ const ModalDelete = ({ closeModal }) => {
         </button>
         <div className="modal-items">
           <div className="modal-title">
-            <h2>폴더 삭제</h2>
+            <h2>{modalTitle}</h2>
             <p>폴더명</p>
           </div>
           <div className="modal-content">
-            <button className="modal-delete-btn">삭제하기</button>
+            <button className="modal-delete-btn">{modalButtonName}</button>
           </div>
         </div>
       </div>

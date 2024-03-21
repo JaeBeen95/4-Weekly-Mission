@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useModal from "../../hooks/useModal";
 import FolderButton from "./FolderButton/FolderButton";
 import FolderCardList from "../FolderToolBar/FolderCardList/FolderCardList";
@@ -17,33 +16,18 @@ const FolderToolBar = ({
   selectedButtonName,
   onFolderSelect,
 }) => {
-  const { isModalOpen, openModal, closeModal, modalType, changeModalType } =
-    useModal();
-  const [modalTitle, setModalTitle] = useState("");
-  const [modalButtonName, setModalButtonName] = useState("");
+  const {
+    isModalOpen,
+    openModal,
+    closeModal,
+    modalType,
+    changeModalType,
+    modalTitle,
+    modalButtonName,
+  } = useModal();
 
-  const handleAddFolderClick = () => {
-    setModalTitle("폴더 추가");
-    setModalButtonName("추가하기");
-    changeModalType("edit");
-    openModal(true);
-  };
-
-  const handleEditButtonClick = () => {
-    setModalTitle("폴더 이름 변경");
-    setModalButtonName("변경하기");
-    changeModalType("edit");
-    openModal(true);
-  };
-
-  const handleShareButtonClick = () => {
-    changeModalType("share");
-    openModal(true);
-  };
-
-  const handleDeleteButtonClick = () => {
-    changeModalType("delete");
-    openModal(true);
+  const handleModalOpen = ({ title, buttonName, modalType }) => {
+    openModal(true, title, buttonName, modalType);
   };
 
   return (
@@ -57,21 +41,50 @@ const FolderToolBar = ({
           />
         </div>
         <div className="add-button-container">
-          <button className="add-button" onClick={handleAddFolderClick}>
+          <button
+            className="add-button"
+            onClick={() => {
+              handleModalOpen({
+                title: "폴더 추가",
+                buttonName: "추가하기",
+                modalType: "folder-add",
+              });
+            }}
+          >
             <span>폴더 추가 +</span>
           </button>
         </div>
         <h2 className="selected-btn">{selectedButtonName}</h2>
         {selectedButtonName !== ALL && (
           <div className="icon-button-container">
-            <button onClick={handleShareButtonClick}>
-              <img src={share} alt="" />
+            <button
+              onClick={() => {
+                handleModalOpen({ title: "폴더 공유", modalType: "share" });
+              }}
+            >
+              <img src={share} alt="폴더 공유 버튼" />
             </button>
-            <button onClick={handleEditButtonClick}>
-              <img src={pen} alt="" />
+            <button
+              onClick={() => {
+                handleModalOpen({
+                  title: "폴더 이름 변경",
+                  buttonName: "변경하기",
+                  modalType: "edit",
+                });
+              }}
+            >
+              <img src={pen} alt="폴더 이름 변경 버튼" />
             </button>
-            <button onClick={handleDeleteButtonClick}>
-              <img src={deleteIcon} alt="" />
+            <button
+              onClick={() =>
+                handleModalOpen({
+                  title: "폴더 삭제",
+                  buttonName: "삭제하기",
+                  modalType: "delete",
+                })
+              }
+            >
+              <img src={deleteIcon} alt="폴더 삭제 버튼" />
             </button>
           </div>
         )}
@@ -83,6 +96,8 @@ const FolderToolBar = ({
         openModal={openModal}
         closeModal={closeModal}
         changeModalType={changeModalType}
+        modalTitle={modalTitle}
+        modalButtonName={modalButtonName}
         folderNameData={folderNameData}
       />
       {isModalOpen && modalType === "edit" && (
@@ -92,11 +107,22 @@ const FolderToolBar = ({
           modalButtonName={modalButtonName}
         />
       )}
+      {isModalOpen && modalType === "folder-add" && (
+        <ModalEdit
+          closeModal={closeModal}
+          modalTitle={modalTitle}
+          modalButtonName={modalButtonName}
+        />
+      )}
       {isModalOpen && modalType === "share" && (
-        <ModalShare closeModal={closeModal} />
+        <ModalShare closeModal={closeModal} modalTitle={modalTitle} />
       )}
       {isModalOpen && modalType === "delete" && (
-        <ModalDelete closeModal={closeModal} />
+        <ModalDelete
+          closeModal={closeModal}
+          modalTitle={modalTitle}
+          modalButtonName={modalButtonName}
+        />
       )}
     </div>
   );

@@ -6,12 +6,14 @@ import kebab from "../../../images/kebab.svg";
 import "./FolderCardList.css";
 
 const FolderCardList = ({
+  links,
   isModalOpen,
+  modalType,
   openModal,
   closeModal,
-  modalType,
   changeModalType,
-  links,
+  modalTitle,
+  modalButtonName,
   folderNameData,
 }) => {
   const [popoverShows, setPopoverShows] = useState({});
@@ -25,18 +27,11 @@ const FolderCardList = ({
     }));
   };
 
-  const handleDeleteClick = (id, e) => {
+  const handlePopoverClick = (e, id, { title, buttonName, modalType }) => {
     e.preventDefault();
     setSelectedLinkId(id);
-    changeModalType("delete");
-    openModal(true);
-  };
-
-  const handleAddFolderClick = (id, e) => {
-    e.preventDefault();
-    setSelectedLinkId(id);
-    changeModalType("add");
-    openModal(true);
+    changeModalType(modalType);
+    openModal(true, title, buttonName, modalType);
   };
 
   return (
@@ -70,10 +65,26 @@ const FolderCardList = ({
               {popoverShows[link.id] && (
                 <div className="popover">
                   <ul className="popover-list">
-                    <li onClick={(e) => handleDeleteClick(link.id, e)}>
+                    <li
+                      onClick={(e) =>
+                        handlePopoverClick(e, link.id, {
+                          title: "폴더 삭제",
+                          buttonName: "삭제하기",
+                          modalType: "delete",
+                        })
+                      }
+                    >
                       삭제하기
                     </li>
-                    <li onClick={(e) => handleAddFolderClick(link.id, e)}>
+                    <li
+                      onClick={(e) =>
+                        handlePopoverClick(e, link.id, {
+                          title: "폴더에 추가",
+                          buttonName: "추가하기",
+                          modalType: "add",
+                        })
+                      }
+                    >
                       폴더에 추가
                     </li>
                   </ul>
@@ -85,10 +96,20 @@ const FolderCardList = ({
       ))}
 
       {isModalOpen && modalType === "delete" && (
-        <ModalDelete closeModal={closeModal} linkId={selectedLinkId} />
+        <ModalDelete
+          linkId={selectedLinkId}
+          closeModal={closeModal}
+          modalTitle={modalTitle}
+          modalButtonName={modalButtonName}
+        />
       )}
       {isModalOpen && modalType === "add" && (
-        <ModalAdd closeModal={closeModal} folderNameData={folderNameData} />
+        <ModalAdd
+          folderNameData={folderNameData}
+          closeModal={closeModal}
+          modalTitle={modalTitle}
+          modalButtonName={modalButtonName}
+        />
       )}
     </div>
   );

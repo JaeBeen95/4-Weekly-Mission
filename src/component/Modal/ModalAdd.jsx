@@ -2,7 +2,12 @@ import { useState } from "react";
 import "./ModalAdd.css";
 import closeBtn from "../../images/close.svg";
 
-const ModalAdd = ({ folderNameData, closeModal }) => {
+const ModalAdd = ({
+  folderNameData,
+  closeModal,
+  modalTitle,
+  modalButtonName,
+}) => {
   const [isClick, setIsClick] = useState(null);
 
   const handleClick = (id) => {
@@ -23,7 +28,7 @@ const ModalAdd = ({ folderNameData, closeModal }) => {
         </button>
         <div className="modal-items">
           <div className="modal-title">
-            <h2>폴더에 추가</h2>
+            <h2>{modalTitle}</h2>
             <p>링크 주소</p>
           </div>
           <div className="modal-content">
@@ -45,7 +50,7 @@ const ModalAdd = ({ folderNameData, closeModal }) => {
                 </button>
               ))}
             </div>
-            <button className="modal-add-btn">추가하기</button>
+            <button className="modal-add-btn">{modalButtonName}</button>
           </div>
         </div>
       </div>
