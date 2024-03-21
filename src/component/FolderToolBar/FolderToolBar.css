@@ -55,7 +55,6 @@
 
 .add-button {
   align-items: center;
-  border: 0.1rem solid var(--white);
   border-radius: 2rem;
   color: #e7effb;
   gap: 0.4rem;
