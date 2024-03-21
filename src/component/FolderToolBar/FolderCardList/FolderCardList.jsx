@@ -68,7 +68,7 @@ const FolderCardList = ({
                     <li
                       onClick={(e) =>
                         handlePopoverClick(e, link.id, {
-                          title: "폴더 삭제",
+                          title: "링크 삭제",
                           buttonName: "삭제하기",
                           modalType: "delete",
                         })
