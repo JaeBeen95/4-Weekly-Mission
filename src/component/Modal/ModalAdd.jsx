@@ -16,7 +16,7 @@ const ModalAdd = ({
 
   return (
     <>
-      <div className="modal-bg"></div>
+      <div className="modal-bg" />
       <div className="modal-box">
         <button
           className="modal-close-btn"

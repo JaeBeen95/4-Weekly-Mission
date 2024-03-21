@@ -4,7 +4,7 @@ import closeBtn from "../../images/close.svg";
 const ModalEdit = ({ closeModal, modalTitle, modalButtonName }) => {
   return (
     <>
-      <div className="modal-bg"></div>
+      <div className="modal-bg" />
       <div className="modal-box">
         <button
           className="modal-close-btn"
