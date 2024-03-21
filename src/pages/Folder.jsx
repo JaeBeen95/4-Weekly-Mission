@@ -33,6 +33,7 @@ const Folder = () => {
           setLinks(data);
         })
         .catch((error) => console.error("Error:", error));
+      return;
     } else {
       const folderName =
         folderNameData.find((button) => button.id === folderId)?.name || ALL;
