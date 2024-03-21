@@ -8,10 +8,10 @@ const ModalAdd = ({
   modalTitle,
   modalButtonName,
 }) => {
-  const [isClick, setIsClick] = useState(null);
+  const [isButtonClick, setIsButtonClick] = useState(null);
 
   const handleClick = (id) => {
-    setIsClick(id);
+    setIsButtonClick(id);
   };
 
   return (
@@ -40,7 +40,7 @@ const ModalAdd = ({
                     handleClick(data.id);
                   }}
                   className={`folder-list-btn ${
-                    isClick === data.id ? "btn-click" : ""
+                    isButtonClick === data.id ? "btn-click" : ""
                   }`}
                 >
                   <span className="folder-list-name">{data.name}</span>
