@@ -16,7 +16,7 @@ const Navigation = ({ position = "sticky", url = apiURL }: navigationProps) => {
   }, [url]);
 
   return (
-    <S.Navigation position={position}>
+    <S.Navigation $position={position}>
       <S.Wrap>
         <a href="/">
           <img src={linkbrary} alt="링크브러리 로고" />
@@ -37,15 +37,15 @@ const Navigation = ({ position = "sticky", url = apiURL }: navigationProps) => {
 };
 
 const S = {
-  Navigation: styled.nav<{ position: string }>`
+  Navigation: styled.nav<{ $position: string }>`
     display: flex;
     justify-content: center;
     z-index: 10;
     width: 100%;
     background-color: var(--background);
 
-    ${({ position }) =>
-      position === "sticky"
+    ${({ $position }) =>
+      $position === "sticky"
         ? `
           position: sticky;
           top: 0;

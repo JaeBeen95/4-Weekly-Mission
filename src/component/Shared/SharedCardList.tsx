@@ -18,7 +18,7 @@ const CardList = () => {
     <S.CardList>
       {cardData.map(({ id, url, imageSource, createdAt, description }) => (
         <S.Card key={id} href={url} target="_blank" rel="noopener noreferrer">
-          <S.CardImg style={{ backgroundImage: `url(${imageSource})` }} />
+          <S.CardImg $imageSource={imageSource} />
           <S.Content>
             <S.ElapsedTime>{elapsedTime(createdAt)}</S.ElapsedTime>
             <S.Description>{description}</S.Description>
@@ -60,11 +60,12 @@ const S = {
     }
   `,
 
-  CardImg: styled.div`
+  CardImg: styled.div<{ $imageSource: string }>`
     width: 100%;
     min-height: 19.2rem;
     height: 19.2rem;
     border-radius: 15px 15px 0 0;
+    background-image: url(${({ $imageSource }) => $imageSource});
     background-position: center;
     background-size: 100%;
     transition: background-size 0.3s ease-in-out;
