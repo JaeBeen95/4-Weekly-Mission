@@ -3,7 +3,7 @@ import { elapsedTime } from "../../../utils/utils";
 import { fetchData } from "./fetchData";
 import { formatCreatedAt } from "../../../utils/utils";
 import { cardDataType } from "../../../interfaces/shared.interface";
-import "./CardList.css";
+import "./SharedCardList.css";
 
 const CardList = () => {
   const [cardData, setCardData] = useState<cardDataType[]>([]);

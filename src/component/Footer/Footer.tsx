@@ -1,8 +1,8 @@
 import "./Footer.css";
-import facebookIcon from "../../images/facebook.svg";
-import twitterIcon from "../../images/instagram.svg";
-import youtubeIcon from "../../images/youtube.svg";
-import instagramIcon from "../../images/instagram.svg";
+import facebookIcon from "../../assets/icons/facebook.svg";
+import twitterIcon from "../../assets/icons/instagram.svg";
+import youtubeIcon from "../../assets/icons/youtube.svg";
+import instagramIcon from "../../assets/icons/instagram.svg";
 
 const SNS_LIST = [
   {

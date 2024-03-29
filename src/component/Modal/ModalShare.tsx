@@ -1,9 +1,9 @@
 import { modalType } from "../../interfaces/folder.interface";
 import "./ModalShare.css";
-import closeBtn from "../../images/close.svg";
-import kakaoImg from "../../images/kakao.svg";
-import facebookImg from "../../images/facebook.svg";
-import linkImg from "../../images/link.svg";
+import closeBtn from "../../assets/icons/close.svg";
+import kakaoImg from "../../assets/icons/kakao.svg";
+import facebookImg from "../../assets/icons/facebook.svg";
+import linkImg from "../../assets/icons/link.svg";
 
 const ModalShare = ({ closeModal, modalTitle }: modalType) => {
   const hostAddress = "https://yourdomain.com"; // 각자 주소 바꾸기

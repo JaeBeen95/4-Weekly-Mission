@@ -1,18 +1,18 @@
-import useModal from "../../hooks/useModal";
-import FolderButton from "./FolderButton/FolderButton";
-import FolderCardList from "./FolderCardList/FolderCardList";
-import ModalEdit from "../Modal/ModalEdit";
-import ModalShare from "../Modal/ModalShare";
-import ModalDelete from "../Modal/ModalDelete";
-import { ALL } from "../../utils/utils";
+import useModal from "../../../hooks/useModal";
+import FolderButton from "../FolderButton/FolderButton";
+import FolderCardList from "../FolderCardList/FolderCardList";
+import ModalEdit from "../../Modal/ModalEdit";
+import ModalShare from "../../Modal/ModalShare";
+import ModalDelete from "../../Modal/ModalDelete";
+import { ALL } from "../../../utils/utils";
 import {
   folderToolBarProps,
   handleModalType,
-} from "../../interfaces/folder.interface";
+} from "../../../interfaces/folder.interface";
 import "./FolderToolBar.css";
-import share from "../../images/share.svg";
-import pen from "../../images/pen.svg";
-import deleteIcon from "../../images/delete.svg";
+import share from "../../../assets/icons/share.svg";
+import pen from "../../../assets/icons/pen.svg";
+import deleteIcon from "../../../assets/icons/delete.svg";
 
 const FolderToolBar = ({
   folderData,

@@ -1,7 +1,7 @@
 import Navigation from "../component/Navigation/Navigation";
 import Footer from "../component/Footer/Footer";
-import UserSection from "../component/MainSection/UserSection/UserSection";
-import CardList from "../component/MainSection/CardList/CardList";
+import UserSection from "../component/Shared/UserSection/UserSection";
+import CardList from "../component/Shared/CardList/SharedCardList";
 import "./page.css";
 
 const Shared = () => {

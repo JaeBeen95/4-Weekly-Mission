@@ -5,8 +5,8 @@ import {
 } from "../../interfaces/navigation.interface";
 import "./Navigation.css";
 import classNames from "classnames";
-import linkbrary from "../../images/linkbrary.svg";
-import profileImg from "../../images/myprofile.svg";
+import linkbrary from "../../assets/icons/linkbrary.svg";
+import profileImg from "../../assets/icons/myprofile.svg";
 import { apiURL, fetchData } from "./fetchData";
 
 const Navigation = ({ position = "sticky", url = apiURL }: navigationProps) => {

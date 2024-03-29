@@ -1,6 +1,6 @@
-import { searchBarProps } from "../../../interfaces/folder.interface";
+import { searchBarProps } from "../../interfaces/folder.interface";
 import "./SearchBar.css";
-import searchImg from "../../../images/search.svg";
+import searchImg from "../../assets/icons/search.svg";
 
 const SearchBar = ({ onSearch }: searchBarProps) => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {

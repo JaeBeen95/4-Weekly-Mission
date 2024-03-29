@@ -6,7 +6,7 @@ import {
 } from "../../../interfaces/folder.interface";
 import ModalDelete from "../../Modal/ModalDelete";
 import ModalAdd from "../../Modal/ModalAdd";
-import kebab from "../../../images/kebab.svg";
+import kebab from "../../../assets/icons/kebab.svg";
 import "./FolderCardList.css";
 
 const FolderCardList = ({

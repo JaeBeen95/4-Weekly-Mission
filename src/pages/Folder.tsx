@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import useSearch from "../hooks/useSearch";
-import { fetchFolders, fetchLinks } from "../component/FolderToolBar/fetchData";
+import {
+  fetchFolders,
+  fetchLinks,
+} from "../component/Folder/FolderToolBar/fetchData";
 import { ALL } from "../utils/utils";
 import { folderDataType, linksType } from "../interfaces/folder.interface";
 import Footer from "../component/Footer/Footer";
 import Navigation from "../component/Navigation/Navigation";
 import InputSection from "../component/InputSection/InputSection";
-import SearchBar from "../component/MainSection/SearchBar/SearchBar";
-import FolderToolBar from "../component/FolderToolBar/FolderToolBar";
+import SearchBar from "../component/SearchBar/SearchBar";
+import FolderToolBar from "../component/Folder/FolderToolBar/FolderToolBar";
 import "./page.css";
 
 const Folder = () => {

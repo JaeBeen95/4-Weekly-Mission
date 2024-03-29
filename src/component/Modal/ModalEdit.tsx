@@ -1,5 +1,5 @@
 import "./ModalEdit.css";
-import closeBtn from "../../images/close.svg";
+import closeBtn from "../../assets/icons/close.svg";
 import { modalType } from "../../interfaces/folder.interface";
 
 const ModalEdit = ({ closeModal, modalTitle, modalButtonName }: modalType) => {
