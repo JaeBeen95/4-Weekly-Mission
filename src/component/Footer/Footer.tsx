@@ -37,17 +37,14 @@ const Footer = () => {
           <a href="/">FAQ</a>
         </div>
         <div className="sns">
-          {SNS_LIST.map((data) => (
+          {SNS_LIST.map(({ name, href, logo }) => (
             <a
-              key={data.name}
-              href={data.href}
+              key={name}
+              href={href}
               target="_blank"
               rel="no opener noreferrer"
             >
-              <img
-                src={data.logo}
-                alt={`${data.name} 홈페이지로 연결된 ${data.name} 로고`}
-              />
+              <img src={logo} alt={`${name} 홈페이지로 연결된 ${name} 로고`} />
             </a>
           ))}
         </div>

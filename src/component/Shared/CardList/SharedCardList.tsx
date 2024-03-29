@@ -16,22 +16,22 @@ const CardList = () => {
 
   return (
     <div className="card-list">
-      {cardData.map((data) => (
+      {cardData.map(({ id, url, imageSource, createdAt, description }) => (
         <a
           className="card"
-          key={data.id}
-          href={data.url}
+          key={id}
+          href={url}
           target="_blank"
           rel="noopener noreferrer"
         >
           <div
             className="cardImg"
-            style={{ backgroundImage: `url(${data.imageSource})` }}
+            style={{ backgroundImage: `url(${imageSource})` }}
           ></div>
           <div className="content">
-            <span className="elapsed-time">{elapsedTime(data.createdAt)}</span>
-            <p className="description">{data.description}</p>
-            <p className="createdAt">{formatCreatedAt(data.createdAt)}</p>
+            <span className="elapsed-time">{elapsedTime(createdAt)}</span>
+            <p className="description">{description}</p>
+            <p className="createdAt">{formatCreatedAt(createdAt)}</p>
           </div>
         </a>
       ))}

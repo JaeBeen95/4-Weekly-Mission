@@ -34,20 +34,18 @@ const ModalAdd = ({
           </div>
           <div className="modal-content">
             <div className="modal-folder-list">
-              {folderData?.map((data) => (
+              {folderData?.map(({ id, name, link }) => (
                 <button
-                  key={data.id}
+                  key={id}
                   onClick={() => {
-                    handleClick(data.id);
+                    handleClick(id);
                   }}
                   className={`folder-list-btn ${
-                    isButtonClick === data.id ? "btn-click" : ""
+                    isButtonClick === id ? "btn-click" : ""
                   }`}
                 >
-                  <span className="folder-list-name">{data.name}</span>
-                  <span className="folder-list-count">
-                    {data.link.count}개 링크
-                  </span>
+                  <span className="folder-list-name">{name}</span>
+                  <span className="folder-list-count">{link.count}개 링크</span>
                 </button>
               ))}
             </div>

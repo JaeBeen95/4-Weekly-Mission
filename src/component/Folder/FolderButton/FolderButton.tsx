@@ -21,18 +21,18 @@ const FolderButton = ({
       >
         <span>{ALL}</span>
       </button>
-      {folderData.map((button) => (
+      {folderData.map(({ id, name }) => (
         <button
-          key={button.id}
+          key={id}
           className={classNames(
             "folder-button",
-            selectedButtonName === button.name && "selected"
+            selectedButtonName === name && "selected"
           )}
           onClick={() => {
-            onFolderSelect && onFolderSelect(button.id, button.name);
+            onFolderSelect && onFolderSelect(id, name);
           }}
         >
-          <span>{button.name}</span>
+          <span>{name}</span>
         </button>
       ))}
     </>

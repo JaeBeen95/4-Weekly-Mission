@@ -14,15 +14,17 @@ const UserSection = () => {
     return <div>로딩 중입니다</div>;
   }
 
+  const { folder } = userData;
+
   return (
     <div className="folder-section">
       <img
         className="avatar"
-        src={userData.folder.owner.profileImageSource}
+        src={folder.owner.profileImageSource}
         alt="프로필"
       />
-      <span className="user">@{userData.folder.owner.name}</span>
-      <h2 className="folder-name">{userData.folder.name}</h2>
+      <span className="user">@{folder.owner.name}</span>
+      <h2 className="folder-name">{folder.name}</h2>
     </div>
   );
 };
