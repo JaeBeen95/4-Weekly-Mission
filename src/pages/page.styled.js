@@ -1,4 +1,6 @@
-.main-section {
+import styled from "styled-components";
+
+export const MainSection = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -7,12 +9,13 @@
   width: 100%;
   gap: 2rem;
   padding-bottom: 26rem;
+
   @media (min-width: 768px) {
     gap: 4rem;
   }
-}
+`;
 
-.wrap {
+export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,4 +27,4 @@
   @media (min-width: 768px) {
     gap: 4rem;
   }
-}
+`;

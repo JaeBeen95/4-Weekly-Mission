@@ -1,19 +1,19 @@
-import Navigation from "../component/Navigation/Navigation";
+import Navigation from "../component/common/Navigation";
 import Footer from "../component/Footer/Footer";
-import UserSection from "../component/Shared/UserSection/UserSection";
-import CardList from "../component/Shared/CardList/SharedCardList";
-import "./page.css";
+import UserSection from "../component/Shared/SharedUserSection";
+import CardList from "../component/Shared/SharedCardList";
+import * as S from "./page.styled";
 
 const Shared = () => {
   return (
     <>
       <Navigation position="sticky" />
-      <section className="main-section">
+      <S.MainSection>
         <UserSection />
-        <div className="wrap">
+        <S.MainWrapper>
           <CardList />
-        </div>
-      </section>
+        </S.MainWrapper>
+      </S.MainSection>
       <Footer />
     </>
   );

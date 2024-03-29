@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import useSearch from "../hooks/useSearch";
-import {
-  fetchFolders,
-  fetchLinks,
-} from "../component/Folder/FolderToolBar/fetchData";
+import { fetchFolders, fetchLinks } from "../component/Folder/fetchData";
 import { ALL } from "../utils/utils";
 import { folderDataType, linksType } from "../interfaces/folder.interface";
 import Footer from "../component/Footer/Footer";
-import Navigation from "../component/Navigation/Navigation";
-import InputSection from "../component/InputSection/InputSection";
-import SearchBar from "../component/SearchBar/SearchBar";
-import FolderToolBar from "../component/Folder/FolderToolBar/FolderToolBar";
-import "./page.css";
+import Navigation from "../component/common/Navigation";
+import InputSection from "../component/Folder/InputSection";
+import SearchBar from "../component/common/SearchBar";
+import FolderToolBar from "../component/Folder/FolderToolBar";
+import * as S from "./page.styled";
 
 const Folder = () => {
   const [folderData, setFolderData] = useState<folderDataType[]>([]);
@@ -44,9 +41,9 @@ const Folder = () => {
   return (
     <>
       <Navigation position="static" />
-      <section className="main-section">
+      <S.MainSection>
         <InputSection folderData={folderData} />
-        <div className="wrap">
+        <S.MainWrapper>
           <SearchBar onSearch={setSearchKeyword} />
           <FolderToolBar
             folderData={folderData}
@@ -54,9 +51,9 @@ const Folder = () => {
             selectedButtonName={selectedButtonName}
             onFolderSelect={onFolderSelect}
           />
-        </div>
+        </S.MainWrapper>
         <Footer />
-      </section>
+      </S.MainSection>
     </>
   );
 };
