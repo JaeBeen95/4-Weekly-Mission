@@ -51,7 +51,7 @@ const FolderCardList = ({
         ({ id, url, image_source, description, created_at }) => (
           <a key={id} href={url} target="_blank" rel="noopener noreferrer">
             <S.Card>
-              <S.CardImg backgroundImage={image_source} />
+              <S.CardImg $backgroundImage={image_source} />
               <S.CardContent>
                 <S.ElapsedTime>{elapsedTime(created_at)}</S.ElapsedTime>
                 <S.Description>{description}</S.Description>
@@ -148,7 +148,7 @@ const S = {
     }
   `,
 
-  CardImg: styled.div<{ backgroundImage: string }>`
+  CardImg: styled.div<{ $backgroundImage: string }>`
     background-position: 50%;
     background-size: 100%;
     border-radius: 1.5rem 1.5rem 0 0;
@@ -156,7 +156,7 @@ const S = {
     min-height: 19.2rem;
     transition: background-size 0.3s ease-in-out;
     width: 100%;
-    background-image: url(${({ backgroundImage }) => backgroundImage});
+    background-image: url(${({ $backgroundImage }) => $backgroundImage});
 
     @media (min-width: 768px) {
       min-height: 20rem;
