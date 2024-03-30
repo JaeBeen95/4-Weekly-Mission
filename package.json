@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "jb-weekly",
+=======
+  "name": "fe-weekly-mission",
+>>>>>>> 1472169dbfd30c401e67ec30b5fd165944311899
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +13,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18",
@@ -22,5 +27,18 @@
     "eslint": "^8",
     "eslint-config-next": "13.5.6",
     "typescript": "^5"
+=======
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "13.5.6"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.6"
+>>>>>>> 1472169dbfd30c401e67ec30b5fd165944311899
   }
 }

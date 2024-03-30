@@ -4,7 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+<<<<<<< HEAD
 .yarn/install-state.gz
+=======
+>>>>>>> 1472169dbfd30c401e67ec30b5fd165944311899
 
 # testing
 /coverage
