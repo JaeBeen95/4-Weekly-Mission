@@ -1,6 +1,4 @@
-import styled from "styled-components";
-
-export const MainSection = styled.section`
+.mainSection {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -9,13 +7,15 @@ export const MainSection = styled.section`
   width: 100%;
   gap: 2rem;
   padding-bottom: 26rem;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .mainSection {
     gap: 4rem;
   }
-`;
+}
 
-export const MainWrapper = styled.div`
+.mainWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,8 +23,10 @@ export const MainWrapper = styled.div`
   max-width: 112.4rem;
   gap: 3.2rem;
   padding: 0 3.2rem;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .mainWrapper {
     gap: 4rem;
   }
-`;
+}

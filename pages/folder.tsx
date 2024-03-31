@@ -8,7 +8,7 @@ import Navigation from "../components/common/Navigation";
 import InputSection from "../components/Folder/InputSection";
 import SearchBar from "../components/common/SearchBar";
 import FolderToolBar from "../components/Folder/FolderToolBar";
-import * as S from "../styles/page.styled";
+import styles from "../styles/page.module.css";
 
 const Folder = () => {
   const [folderData, setFolderData] = useState<folderDataType[]>([]);
@@ -41,9 +41,9 @@ const Folder = () => {
   return (
     <>
       <Navigation position="static" />
-      <S.MainSection>
+      <section className={styles.mainSection}>
         <InputSection folderData={folderData} />
-        <S.MainWrapper>
+        <div className={styles.mainWrapper}>
           <SearchBar onSearch={setSearchKeyword} />
           <FolderToolBar
             folderData={folderData}
@@ -51,9 +51,9 @@ const Folder = () => {
             selectedButtonName={selectedButtonName}
             onFolderSelect={onFolderSelect}
           />
-        </S.MainWrapper>
+        </div>
         <Footer />
-      </S.MainSection>
+      </section>
     </>
   );
 };

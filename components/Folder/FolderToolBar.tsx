@@ -9,10 +9,11 @@ import {
   folderToolBarProps,
   handleModalType,
 } from "../../types/folder.interface";
-import styled from "styled-components";
+import styles from "./FolderToolBar.module.css";
 import share from "../../public/icons/share.svg";
 import pen from "../../public/icons/pen.svg";
 import deleteIcon from "../../public/icons/delete.svg";
+import Image from "next/image";
 
 const FolderToolBar = ({
   folderData,
@@ -39,17 +40,18 @@ const FolderToolBar = ({
   };
 
   return (
-    <S.FolderToolBarContainer>
-      <S.FolderToolBarHeader>
-        <S.FolderButtonGroup>
+    <div className={styles.FolderToolBarContainer}>
+      <div className={styles.FolderToolBarHeader}>
+        <div className={styles.FolderButtonGroup}>
           <FolderButton
             folderData={folderData}
             onFolderSelect={onFolderSelect}
             selectedButtonName={selectedButtonName}
           />
-        </S.FolderButtonGroup>
-        <S.AddFolderButtonWrapper>
-          <S.AddFolderButton
+        </div>
+        <div className={styles.AddFolderButtonWrapper}>
+          <button
+            className={styles.AddFolderButton}
             onClick={() => {
               handleModalOpen({
                 title: "폴더 추가",
@@ -59,19 +61,25 @@ const FolderToolBar = ({
             }}
           >
             폴더 추가 +
-          </S.AddFolderButton>
-        </S.AddFolderButtonWrapper>
-        <S.SelectedFolderName>{selectedButtonName}</S.SelectedFolderName>
+          </button>
+        </div>
+        <h2 className={styles.SelectedFolderName}>{selectedButtonName}</h2>
         {selectedButtonName !== ALL && (
-          <S.FolderActionButtonGroup>
-            <S.FolderActionButton
+          <div className={styles.FolderActionButtonGroup}>
+            <button
+              className={styles.FolderActionButton}
               onClick={() => {
                 handleModalOpen({ title: "폴더 공유", modalType: "share" });
               }}
             >
-              <S.ActionButtonIcon src={share} alt="폴더 공유 버튼" />
-            </S.FolderActionButton>
-            <S.FolderActionButton
+              <Image
+                className={styles.ActionButtonIcon}
+                src={share}
+                alt="폴더 공유 버튼"
+              />
+            </button>
+            <button
+              className={styles.FolderActionButton}
               onClick={() => {
                 handleModalOpen({
                   title: "폴더 이름 변경",
@@ -80,9 +88,14 @@ const FolderToolBar = ({
                 });
               }}
             >
-              <S.ActionButtonIcon src={pen} alt="폴더 이름 변경 버튼" />
-            </S.FolderActionButton>
-            <S.FolderActionButton
+              <Image
+                className={styles.ActionButtonIcon}
+                src={pen}
+                alt="폴더 이름 변경 버튼"
+              />
+            </button>
+            <button
+              className={styles.FolderActionButton}
               onClick={() =>
                 handleModalOpen({
                   title: "폴더 삭제",
@@ -91,11 +104,15 @@ const FolderToolBar = ({
                 })
               }
             >
-              <S.ActionButtonIcon src={deleteIcon} alt="폴더 삭제 버튼" />
-            </S.FolderActionButton>
-          </S.FolderActionButtonGroup>
+              <Image
+                className={styles.ActionButtonIcon}
+                src={deleteIcon}
+                alt="폴더 삭제 버튼"
+              />
+            </button>
+          </div>
         )}
-      </S.FolderToolBarHeader>
+      </div>
       <FolderCardList
         filteredItems={filteredItems}
         isModalOpen={isModalOpen}
@@ -131,101 +148,8 @@ const FolderToolBar = ({
           modalButtonName={modalButtonName}
         />
       )}
-    </S.FolderToolBarContainer>
+    </div>
   );
-};
-
-const S = {
-  FolderToolBarContainer: styled.div`
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-    @media (min-width: 768px) {
-      row-gap: 2.4rem;
-    }
-  `,
-  FolderToolBarHeader: styled.div`
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.2rem;
-    @media (min-width: 768px) {
-      grid-row-gap: 2.4rem;
-      grid-column-gap: 1.2rem;
-      align-items: center;
-      column-gap: 1.2rem;
-      display: grid;
-      grid-template-areas:
-        "folderButtons folderButtons addFolderButton"
-        "selectedFolderName folderActionButtons folderActionButtons";
-      justify-content: space-between;
-      row-gap: 2.4rem;
-    }
-  `,
-  FolderButtonGroup: styled.div`
-    column-gap: 0.8rem;
-    display: flex;
-    flex-grow: 1;
-    flex-wrap: wrap;
-    grid-area: folderButtons;
-    row-gap: 1.2rem;
-  `,
-  AddFolderButtonWrapper: styled.div`
-    bottom: 10.1rem;
-    grid-area: addFolderButton;
-    left: 50%;
-    position: fixed;
-    transform: translateX(-50%);
-    z-index: 100;
-    @media (min-width: 768px) {
-      justify-self: flex-end;
-      position: static;
-      transform: none;
-    }
-  `,
-  AddFolderButton: styled.button`
-    align-items: center;
-    border-radius: 2rem;
-    color: #e7effb;
-    gap: 0.4rem;
-    display: flex;
-    font-size: 1.6rem;
-    font-weight: 500;
-    height: 3.5rem;
-    padding: 0 2.4rem;
-    background-color: var(--primary);
-    @media (min-width: 768px) {
-      background-color: transparent;
-      color: #6d6afe;
-      padding: 0;
-    }
-  `,
-  SelectedFolderName: styled.h2`
-    font-size: 2rem;
-    font-weight: 600;
-    grid-area: selectedFolderName;
-    letter-spacing: -0.02rem;
-    margin-top: 1.6rem;
-    @media (min-width: 768px) {
-      font-size: 2.4rem;
-      margin-top: 0;
-    }
-  `,
-  FolderActionButtonGroup: styled.div`
-    gap: 1.2rem;
-    display: flex;
-    grid-area: folderActionButtons;
-    justify-self: flex-start;
-    @media (min-width: 768px) {
-      justify-self: flex-end;
-    }
-    button {
-      border: none;
-    }
-  `,
-
-  FolderActionButton: styled.button``,
-  ActionButtonIcon: styled.img``,
 };
 
 export default FolderToolBar;

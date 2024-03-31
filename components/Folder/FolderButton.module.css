@@ -1,0 +1,43 @@
+.FolderButtonWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.FolderButton {
+  align-items: center;
+  border: 1px solid #6d6afe;
+  border-radius: 5px;
+  display: flex;
+  font-size: 1.4rem;
+  height: 3.1rem;
+  padding: 0.8rem 1.2rem;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+.FolderButton[data-selected="true"] {
+  background-color: #6d6afe;
+  color: #fff;
+}
+
+.FolderButton[data-selected="false"] {
+  background-color: #fff;
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  .FolderButton {
+    font-size: 1.6rem;
+    height: 3.7rem;
+    padding: 0 1.2rem;
+  }
+}
+
+.FolderButton:hover[data-selected="true"] {
+  background-color: #6d6afe;
+}
+
+.FolderButton:hover[data-selected="false"] {
+  background-color: rgba(109, 106, 254, 0.3);
+}
