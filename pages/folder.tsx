@@ -26,7 +26,7 @@ const Folder = () => {
     fetchLinks().then(setLinks).catch(console.error);
   }, []);
 
-  const onFolderSelect = (folderId: string | number) => {
+  const onFolderSelect = (folderId: typeof ALL | number) => {
     if (folderId === ALL) {
       setSelectedButtonName(ALL);
       fetchLinks().then(setLinks).catch(console.error);

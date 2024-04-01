@@ -1,3 +1,5 @@
+import { ALL } from "../utils/utils";
+
 export interface folderDataType {
   created_at: string;
   favorite: boolean;
@@ -23,7 +25,7 @@ export interface folderToolBarProps {
   folderData: folderDataType[];
   filteredItems?: linksType[];
   selectedButtonName?: string;
-  onFolderSelect?: (folderId: string | number, folderName?: string) => void;
+  onFolderSelect?: (folderId: typeof ALL | number, folderName?: string) => void;
 }
 
 export interface folderCardListProps extends folderToolBarProps {
