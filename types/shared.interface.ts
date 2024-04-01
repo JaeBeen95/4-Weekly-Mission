@@ -1,4 +1,4 @@
-import { folderDataType } from "./folder.interface";
+import { folderDataType } from "./folder.type";
 
 interface ownerType {
   id: number;

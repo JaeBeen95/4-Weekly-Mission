@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import useSearch from "../hooks/useSearch";
 import { fetchFolders, fetchLinks } from "../components/Folder/fetchData";
-import { folderDataType, linksType } from "../types/folder.interface";
+import { folderDataType, linksType, FolderId } from "../types/folder.type";
 import { ALL } from "../utils/utils";
 import Footer from "../components/Footer/Footer";
 import Navigation from "../components/common/Navigation";
@@ -26,7 +26,7 @@ const Folder = () => {
     fetchLinks().then(setLinks).catch(console.error);
   }, []);
 
-  const onFolderSelect = (folderId: typeof ALL | number) => {
+  const onFolderSelect = (folderId: FolderId) => {
     if (folderId === ALL) {
       setSelectedButtonName(ALL);
       fetchLinks().then(setLinks).catch(console.error);

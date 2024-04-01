@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { elapsedTime, formatCreatedAt } from "../../utils/utils";
-import {
-  folderCardListProps,
-  handleModalType,
-} from "../../types/folder.interface";
+import { folderCardListProps } from "../../types/folder.type";
+import { handleModalGroup } from "../../types/modal.type";
 import ModalDelete from "../Modal/ModalDelete";
 import ModalAdd from "../Modal/ModalAdd";
 import kebab from "../../public/icons/kebab.svg";
@@ -14,7 +12,7 @@ import Link from "next/link";
 const FolderCardList = ({
   filteredItems,
   isModalOpen,
-  modalType,
+  modalGroup,
   openModal,
   closeModal,
   changeModalType,
@@ -38,12 +36,12 @@ const FolderCardList = ({
   const handlePopoverClick = (
     e: React.MouseEvent,
     id: number,
-    { title, buttonName, modalType }: handleModalType
+    { title, buttonName, modalGroup }: handleModalGroup
   ) => {
     e.preventDefault();
     setSelectedLinkId(id);
-    changeModalType(modalType);
-    openModal(true, title, buttonName, modalType);
+    changeModalType(modalGroup);
+    openModal(true, title, buttonName, modalGroup);
   };
 
   return (
@@ -79,7 +77,7 @@ const FolderCardList = ({
                           handlePopoverClick(e, id, {
                             title: "링크 삭제",
                             buttonName: "삭제하기",
-                            modalType: "delete",
+                            modalGroup: "delete",
                           })
                         }
                       >
@@ -91,7 +89,7 @@ const FolderCardList = ({
                           handlePopoverClick(e, id, {
                             title: "폴더에 추가",
                             buttonName: "추가하기",
-                            modalType: "add",
+                            modalGroup: "add",
                           })
                         }
                       >
@@ -105,7 +103,7 @@ const FolderCardList = ({
           </Link>
         )
       )}
-      {isModalOpen && modalType === "delete" && (
+      {isModalOpen && modalGroup === "delete" && (
         <ModalDelete
           linkId={selectedLinkId}
           closeModal={closeModal}
@@ -113,7 +111,7 @@ const FolderCardList = ({
           modalButtonName={modalButtonName}
         />
       )}
-      {isModalOpen && modalType === "add" && (
+      {isModalOpen && modalGroup === "add" && (
         <ModalAdd
           folderData={folderData}
           closeModal={closeModal}

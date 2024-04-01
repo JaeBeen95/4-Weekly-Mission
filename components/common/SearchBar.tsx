@@ -1,4 +1,4 @@
-import { searchBarProps } from "../../types/folder.interface";
+import { searchBarProps } from "../../types/folder.type";
 import searchImg from "../../public/icons/search.svg";
 import Image from "next/image";
 import styles from "./SearchBar.module.css";

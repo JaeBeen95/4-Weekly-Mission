@@ -1,3 +1,5 @@
+import { FolderId } from "@/types/folder.type";
+
 export const fetchFolders = async () => {
   try {
     const response = await fetch(
@@ -14,7 +16,7 @@ export const fetchFolders = async () => {
   }
 };
 
-export const fetchLinks = async (folderId?: string | number) => {
+export const fetchLinks = async (folderId?: FolderId) => {
   const baseUrl = "https://bootcamp-api.codeit.kr/api/users/4/links";
   const url = folderId ? `${baseUrl}?folderId=${folderId}` : baseUrl;
   try {

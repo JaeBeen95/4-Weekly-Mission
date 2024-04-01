@@ -1,5 +1,7 @@
 import { ALL } from "../utils/utils";
 
+export type FolderId = typeof ALL | number;
+
 export interface folderDataType {
   created_at: string;
   favorite: boolean;
@@ -30,31 +32,17 @@ export interface folderToolBarProps {
 
 export interface folderCardListProps extends folderToolBarProps {
   isModalOpen?: boolean;
-  modalType?: string;
+  modalGroup?: string;
   openModal: (
     open: boolean,
     title: string,
     buttonName: string | undefined,
-    type: string | undefined
+    group: string | undefined
   ) => void;
   closeModal: () => void;
   changeModalType: (type: string | undefined) => void;
   modalTitle?: string;
   modalButtonName?: string;
-}
-
-export interface modalType {
-  linkId?: number | null;
-  folderData?: folderDataType[];
-  closeModal: () => void;
-  modalTitle?: string;
-  modalButtonName?: string;
-}
-
-export interface handleModalType {
-  title: string;
-  buttonName?: string;
-  modalType: string;
 }
 
 export interface searchBarProps {

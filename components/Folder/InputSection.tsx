@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { InputSectionProps } from "../../types/folder.interface";
+import { InputSectionProps } from "../../types/folder.type";
 import linkImg from "../../public/icons/link.svg";
 import ModalAdd from "../Modal/ModalAdd";
 import styles from "./InputSection.module.css";

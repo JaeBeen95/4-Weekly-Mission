@@ -1,21 +1,20 @@
 import { useState } from "react";
+import { modalType } from "@/types/modal.type";
 
 const useModal = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [modalType, setModalType] = useState<string | undefined>("");
+  const [modalGroup, setModalGroup] = useState<modalType>("");
   const [modalTitle, setModalTitle] = useState<string>("");
-  const [modalButtonName, setModalButtonName] = useState<string | undefined>(
-    ""
-  );
+  const [modalButtonName, setModalButtonName] = useState<modalType>("");
 
   const openModal = (
     open: boolean,
     title: string,
-    buttonName: string | undefined,
-    type: string | undefined
+    buttonName: modalType,
+    group: modalType
   ) => {
     setIsModalOpen(open);
-    setModalType(type);
+    setModalGroup(group);
     setModalTitle(title);
     setModalButtonName(buttonName);
   };
@@ -26,16 +25,16 @@ const useModal = () => {
     setModalButtonName("");
   };
 
-  const changeModalType = (type: string | undefined) => {
-    setModalType(type);
+  const changeModalGroup = (group: modalType) => {
+    setModalGroup(group);
   };
 
   return {
     isModalOpen,
     openModal,
     closeModal,
-    modalType,
-    changeModalType,
+    modalGroup,
+    changeModalGroup,
     modalTitle,
     setModalTitle,
     modalButtonName,

@@ -5,10 +5,8 @@ import ModalEdit from "../Modal/ModalEdit";
 import ModalShare from "../Modal/ModalShare";
 import ModalDelete from "../Modal/ModalDelete";
 import { ALL } from "../../utils/utils";
-import {
-  folderToolBarProps,
-  handleModalType,
-} from "../../types/folder.interface";
+import { folderToolBarProps } from "../../types/folder.type";
+import { handleModalGroup } from "../../types/modal.type";
 import styles from "./FolderToolBar.module.css";
 import share from "../../public/icons/share.svg";
 import pen from "../../public/icons/pen.svg";
@@ -25,8 +23,8 @@ const FolderToolBar = ({
     isModalOpen,
     openModal,
     closeModal,
-    modalType,
-    changeModalType,
+    modalGroup,
+    changeModalGroup,
     modalTitle,
     modalButtonName,
   } = useModal();
@@ -34,9 +32,9 @@ const FolderToolBar = ({
   const handleModalOpen = ({
     title,
     buttonName,
-    modalType,
-  }: handleModalType) => {
-    openModal(true, title, buttonName, modalType);
+    modalGroup,
+  }: handleModalGroup) => {
+    openModal(true, title, buttonName, modalGroup);
   };
 
   return (
@@ -56,7 +54,7 @@ const FolderToolBar = ({
               handleModalOpen({
                 title: "폴더 추가",
                 buttonName: "추가하기",
-                modalType: "folder-add",
+                modalGroup: "folder-add",
               });
             }}
           >
@@ -69,7 +67,7 @@ const FolderToolBar = ({
             <button
               className={styles.FolderActionButton}
               onClick={() => {
-                handleModalOpen({ title: "폴더 공유", modalType: "share" });
+                handleModalOpen({ title: "폴더 공유", modalGroup: "share" });
               }}
             >
               <Image
@@ -84,7 +82,7 @@ const FolderToolBar = ({
                 handleModalOpen({
                   title: "폴더 이름 변경",
                   buttonName: "변경하기",
-                  modalType: "edit",
+                  modalGroup: "edit",
                 });
               }}
             >
@@ -100,7 +98,7 @@ const FolderToolBar = ({
                 handleModalOpen({
                   title: "폴더 삭제",
                   buttonName: "삭제하기",
-                  modalType: "delete",
+                  modalGroup: "delete",
                 })
               }
             >
@@ -116,32 +114,32 @@ const FolderToolBar = ({
       <FolderCardList
         filteredItems={filteredItems}
         isModalOpen={isModalOpen}
-        modalType={modalType}
+        modalGroup={modalGroup}
         openModal={openModal}
         closeModal={closeModal}
-        changeModalType={changeModalType}
+        changeModalType={changeModalGroup}
         modalTitle={modalTitle}
         modalButtonName={modalButtonName}
         folderData={folderData}
       />
-      {isModalOpen && modalType === "edit" && (
+      {isModalOpen && modalGroup === "edit" && (
         <ModalEdit
           closeModal={closeModal}
           modalTitle={modalTitle}
           modalButtonName={modalButtonName}
         />
       )}
-      {isModalOpen && modalType === "folder-add" && (
+      {isModalOpen && modalGroup === "folder-add" && (
         <ModalEdit
           closeModal={closeModal}
           modalTitle={modalTitle}
           modalButtonName={modalButtonName}
         />
       )}
-      {isModalOpen && modalType === "share" && (
+      {isModalOpen && modalGroup === "share" && (
         <ModalShare closeModal={closeModal} modalTitle={modalTitle} />
       )}
-      {isModalOpen && modalType === "delete" && (
+      {isModalOpen && modalGroup === "delete" && (
         <ModalDelete
           closeModal={closeModal}
           modalTitle={modalTitle}

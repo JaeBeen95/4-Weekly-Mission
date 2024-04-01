@@ -1,5 +1,5 @@
 import { ALL } from "../../utils/utils";
-import { folderToolBarProps } from "../../types/folder.interface";
+import { folderToolBarProps } from "../../types/folder.type";
 import styles from "./FolderButton.module.css";
 
 const FolderButton = ({

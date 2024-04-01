@@ -1,12 +1,13 @@
-import { modalType } from "../../types/folder.interface";
+import { modalGroup } from "../../types/modal.type";
 import closeBtn from "../../public/icons/close.svg";
 import kakaoImg from "../../public/icons/kakao.svg";
 import facebookImg from "../../public/icons/facebook.svg";
 import linkImg from "../../public/icons/link.svg";
 import Image from "next/image";
 import styles from "./ModalShare.module.css";
+import Link from "next/link";
 
-const ModalShare = ({ closeModal, modalTitle }: modalType) => {
+const ModalShare = ({ closeModal, modalTitle }: modalGroup) => {
   const hostAddress = "https://yourdomain.com"; // 각자 주소 바꾸기
   const shareUrl = `${hostAddress}/shared/${1}`; // id값도 바꾸기
   const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
@@ -43,7 +44,7 @@ const ModalShare = ({ closeModal, modalTitle }: modalType) => {
             <p>폴더명</p>
           </div>
           <div className={styles.modalShareContent}>
-            <a
+            <Link
               href="/"
               target="_blank"
               rel="noopener noreferrer"
@@ -51,8 +52,8 @@ const ModalShare = ({ closeModal, modalTitle }: modalType) => {
             >
               <Image src={kakaoImg} alt="" className={styles.kakaoImg} />
               <p>카카오톡</p>
-            </a>
-            <a
+            </Link>
+            <Link
               href={facebookShareUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -60,8 +61,8 @@ const ModalShare = ({ closeModal, modalTitle }: modalType) => {
             >
               <Image src={facebookImg} alt="" className={styles.facebookImg} />
               <p>페이스북</p>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/"
               onClick={copyToClipboard}
               target="_blank"
@@ -70,7 +71,7 @@ const ModalShare = ({ closeModal, modalTitle }: modalType) => {
             >
               <Image src={linkImg} alt="" className={styles.linkImg} />
               <p>링크 복사</p>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
