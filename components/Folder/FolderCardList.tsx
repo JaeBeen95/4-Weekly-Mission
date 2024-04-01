@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { elapsedTime, formatCreatedAt } from "../../utils/utils";
 import { folderCardListProps } from "../../types/folder.type";
-import { handleModalGroup } from "../../types/modal.type";
-import ModalDelete from "../Modal/ModalDelete";
-import ModalAdd from "../Modal/ModalAdd";
+import { handleModal } from "../../types/modal.type";
+import ModalMap from "../Modal/ModalMap";
 import kebab from "../../public/icons/kebab.svg";
 import styles from "./FolderCardList.module.css";
 import Image from "next/image";
@@ -36,7 +35,7 @@ const FolderCardList = ({
   const handlePopoverClick = (
     e: React.MouseEvent,
     id: number,
-    { title, buttonName, modalGroup }: handleModalGroup
+    { title, buttonName, modalGroup }: handleModal
   ) => {
     e.preventDefault();
     setSelectedLinkId(id);
@@ -89,7 +88,7 @@ const FolderCardList = ({
                           handlePopoverClick(e, id, {
                             title: "폴더에 추가",
                             buttonName: "추가하기",
-                            modalGroup: "add",
+                            modalGroup: "folder-add",
                           })
                         }
                       >
@@ -103,20 +102,14 @@ const FolderCardList = ({
           </Link>
         )
       )}
-      {isModalOpen && modalGroup === "delete" && (
-        <ModalDelete
-          linkId={selectedLinkId}
+      {isModalOpen && (
+        <ModalMap
+          modalGroup={modalGroup}
           closeModal={closeModal}
           modalTitle={modalTitle}
           modalButtonName={modalButtonName}
-        />
-      )}
-      {isModalOpen && modalGroup === "add" && (
-        <ModalAdd
           folderData={folderData}
-          closeModal={closeModal}
-          modalTitle={modalTitle}
-          modalButtonName={modalButtonName}
+          linkId={selectedLinkId}
         />
       )}
     </div>

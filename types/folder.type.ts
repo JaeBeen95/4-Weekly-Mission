@@ -1,4 +1,5 @@
 import { ALL } from "../utils/utils";
+import { ModalGroup } from "./modal.type";
 
 export type FolderId = typeof ALL | number;
 
@@ -32,16 +33,16 @@ export interface folderToolBarProps {
 
 export interface folderCardListProps extends folderToolBarProps {
   isModalOpen?: boolean;
-  modalGroup?: string;
+  modalGroup: ModalGroup | null;
   openModal: (
     open: boolean,
     title: string,
     buttonName: string | undefined,
-    group: string | undefined
+    group: ModalGroup
   ) => void;
   closeModal: () => void;
-  changeModalType: (type: string | undefined) => void;
-  modalTitle?: string;
+  changeModalType: (type: ModalGroup) => void;
+  modalTitle: string;
   modalButtonName?: string;
 }
 

@@ -1,12 +1,10 @@
 import useModal from "../../hooks/useModal";
 import FolderButton from "./FolderButton";
 import FolderCardList from "./FolderCardList";
-import ModalEdit from "../Modal/ModalEdit";
-import ModalShare from "../Modal/ModalShare";
-import ModalDelete from "../Modal/ModalDelete";
+import ModalMap from "../Modal/ModalMap";
 import { ALL } from "../../utils/utils";
 import { folderToolBarProps } from "../../types/folder.type";
-import { handleModalGroup } from "../../types/modal.type";
+import { handleModal } from "../../types/modal.type";
 import styles from "./FolderToolBar.module.css";
 import share from "../../public/icons/share.svg";
 import pen from "../../public/icons/pen.svg";
@@ -29,11 +27,7 @@ const FolderToolBar = ({
     modalButtonName,
   } = useModal();
 
-  const handleModalOpen = ({
-    title,
-    buttonName,
-    modalGroup,
-  }: handleModalGroup) => {
+  const handleModalOpen = ({ title, buttonName, modalGroup }: handleModal) => {
     openModal(true, title, buttonName, modalGroup);
   };
 
@@ -54,7 +48,7 @@ const FolderToolBar = ({
               handleModalOpen({
                 title: "폴더 추가",
                 buttonName: "추가하기",
-                modalGroup: "folder-add",
+                modalGroup: "edit",
               });
             }}
           >
@@ -122,25 +116,9 @@ const FolderToolBar = ({
         modalButtonName={modalButtonName}
         folderData={folderData}
       />
-      {isModalOpen && modalGroup === "edit" && (
-        <ModalEdit
-          closeModal={closeModal}
-          modalTitle={modalTitle}
-          modalButtonName={modalButtonName}
-        />
-      )}
-      {isModalOpen && modalGroup === "folder-add" && (
-        <ModalEdit
-          closeModal={closeModal}
-          modalTitle={modalTitle}
-          modalButtonName={modalButtonName}
-        />
-      )}
-      {isModalOpen && modalGroup === "share" && (
-        <ModalShare closeModal={closeModal} modalTitle={modalTitle} />
-      )}
-      {isModalOpen && modalGroup === "delete" && (
-        <ModalDelete
+      {isModalOpen && (
+        <ModalMap
+          modalGroup={modalGroup}
           closeModal={closeModal}
           modalTitle={modalTitle}
           modalButtonName={modalButtonName}
