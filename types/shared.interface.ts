@@ -18,7 +18,7 @@ export interface UserType {
   folder: folderType;
 }
 
-export interface cardDataType {
+export interface cardListType {
   createdAt: string;
   description: string;
   id: number;

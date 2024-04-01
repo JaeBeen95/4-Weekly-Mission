@@ -2,22 +2,22 @@ import { useState, useEffect } from "react";
 import { elapsedTime } from "../../utils/utils";
 import { fetchData } from "./fetchData";
 import { formatCreatedAt } from "../../utils/utils";
-import { cardDataType } from "../../types/shared.interface";
+import { cardListType } from "../../types/shared.interface";
 import styles from "./SharedCardList.module.css";
 import Link from "next/link";
 
 const CardList = () => {
-  const [cardData, setCardData] = useState<cardDataType[]>([]);
+  const [cardList, setCardList] = useState<cardListType[]>([]);
 
   useEffect(() => {
     fetchData().then((data) => {
-      setCardData(data);
+      setCardList(data);
     });
   }, []);
 
   return (
     <div className={styles.cardList}>
-      {cardData.map(({ id, url, imageSource, createdAt, description }) => (
+      {cardList.map(({ id, url, imageSource, createdAt, description }) => (
         <Link
           key={id}
           href={url}

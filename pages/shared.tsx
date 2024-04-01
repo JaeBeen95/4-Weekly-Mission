@@ -13,8 +13,8 @@ const Shared = () => {
         <div className={styles.mainWrapper}>
           <SharedCardList />
         </div>
+        <Footer />
       </section>
-      <Footer />
     </>
   );
 };
