@@ -25,15 +25,19 @@ const CardList = () => {
           rel="noopener noreferrer"
           className={styles.card}
         >
-          <div
-            className={styles.cardImg}
-            style={{ backgroundImage: `url(${imageSource})` }}
-          />
-          <div className={styles.content}>
-            <span className={styles.elapsedTime}>{elapsedTime(createdAt)}</span>
-            <p className={styles.description}>{description}</p>
-            <p className={styles.createdAt}>{formatCreatedAt(createdAt)}</p>
-          </div>
+          <>
+            <div
+              className={styles.cardImg}
+              style={{ backgroundImage: `url(${imageSource})` }}
+            />
+            <div className={styles.content}>
+              <span className={styles.elapsedTime}>
+                {elapsedTime(createdAt)}
+              </span>
+              <p className={styles.description}>{description}</p>
+              <p className={styles.createdAt}>{formatCreatedAt(createdAt)}</p>
+            </div>
+          </>
         </Link>
       ))}
     </div>

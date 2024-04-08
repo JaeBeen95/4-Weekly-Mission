@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import useSearch from "../hooks/useSearch";
-import { fetchFolders, fetchLinks } from "../components/Folder/fetchData";
-import { FolderDataType, LinksType, FolderId } from "../types/folder.type";
-import { ALL } from "../utils/utils";
-import Footer from "../components/Footer/Footer";
-import Navigation from "../components/common/Navigation";
-import InputSection from "../components/Folder/InputSection";
-import SearchBar from "../components/common/SearchBar";
-import FolderToolBar from "../components/Folder/FolderToolBar";
-import styles from "../styles/page.module.css";
+import useSearch from "../../hooks/useSearch";
+import { fetchFolders, fetchLinks } from "../../components/Folder/fetchData";
+import { FolderDataType, LinksType, FolderId } from "../../types/folder.type";
+import { ALL } from "../../utils/utils";
+import Footer from "../../components/Footer/Footer";
+import Navigation from "../../components/common/Navigation";
+import InputSection from "../../components/Folder/InputSection";
+import SearchBar from "../../components/common/SearchBar";
+import FolderToolBar from "../../components/Folder/FolderToolBar";
+import styles from "../../styles/page.module.css";
 
 const Folder = () => {
   const [folderData, setFolderData] = useState<FolderDataType[]>([]);
