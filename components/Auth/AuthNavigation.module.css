@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.question {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+}
+
+.toAnotherSign {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+}

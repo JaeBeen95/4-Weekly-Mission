@@ -17,7 +17,7 @@ const Navigation = ({ position = "sticky", url = apiURL }: NavigationProps) => {
   return (
     <nav className={`${styles.navigation} ${styles[position]}`}>
       <div className={styles.wrap}>
-        <LinkbraryLogo />
+        <LinkbraryLogo width={133} height={24} />
         {user ? (
           <div className={styles.myProfile}>
             <Image

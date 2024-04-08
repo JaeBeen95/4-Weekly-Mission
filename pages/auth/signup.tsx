@@ -1,10 +1,10 @@
-import AuthTitle from "@/components/Auth/AuthTitle";
+import AuthNavigation from "@/components/Auth/AuthNavigation";
 import AuthLayout from "@/layouts/AuthLayout";
 
 const SignUp = () => {
   return (
     <AuthLayout>
-      <AuthTitle />
+      <AuthNavigation pageType="signup" />
     </AuthLayout>
   );
 };
