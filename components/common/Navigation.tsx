@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { NavigationProps, UserType } from "../../types/navigation.type";
-import linkbrary from "../../public/icons/linkbrary.svg";
 import profileImg from "../../public/icons/myprofile.svg";
 import { apiURL, fetchData } from "./fetchData";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navigation.module.css";
+import LinkbraryLogo from "./LinkbraryLogo";
 
 const Navigation = ({ position = "sticky", url = apiURL }: NavigationProps) => {
   const [user, setUser] = useState<null | UserType>(null);
@@ -17,17 +17,7 @@ const Navigation = ({ position = "sticky", url = apiURL }: NavigationProps) => {
   return (
     <nav className={`${styles.navigation} ${styles[position]}`}>
       <div className={styles.wrap}>
-        <Link href="/" passHref>
-          <a>
-            <Image
-              src={linkbrary}
-              alt="링크브러리 로고"
-              width={133}
-              height={24}
-              priority
-            />
-          </a>
-        </Link>
+        <LinkbraryLogo />
         {user ? (
           <div className={styles.myProfile}>
             <Image
