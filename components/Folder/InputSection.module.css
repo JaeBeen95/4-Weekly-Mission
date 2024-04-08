@@ -1,4 +1,4 @@
-.InputSection {
+.inputSection {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,12 +8,12 @@
 }
 
 @media (min-width: 768px) {
-  .InputSection {
+  .inputSection {
     padding: 6rem 3.2rem 9rem;
   }
 }
 
-.InputForm {
+.inputForm {
   align-items: center;
   background-color: #fff;
   border: 0.1rem solid #6d6afe;
@@ -27,14 +27,14 @@
 }
 
 @media (min-width: 768px) {
-  .InputForm {
+  .inputForm {
     column-gap: 2rem;
     height: 6.9rem;
     padding: 0 2rem;
   }
 }
 
-.InputBox {
+.inputBox {
   align-items: center;
   column-gap: 0.8rem;
   display: flex;
@@ -42,12 +42,12 @@
 }
 
 @media (min-width: 768px) {
-  .InputBox {
+  .inputBox {
     column-gap: 1.2rem;
   }
 }
 
-.Input {
+.input {
   font-size: 1.4rem;
   height: 5.1rem;
   line-height: 150%;
@@ -55,13 +55,13 @@
 }
 
 @media (min-width: 768px) {
-  .Input {
+  .input {
     font-size: 1.6rem;
     height: 6.7rem;
   }
 }
 
-.LinkButton {
+.linkButton {
   color: inherit;
   font-size: 1.4rem;
   height: 3.7rem;
@@ -72,7 +72,7 @@
   padding: initial;
 }
 
-.CTA {
+.cta {
   align-items: center;
   background: linear-gradient(91deg, #6d6afe 0.12%, #6ae3fe 101.84%);
   border-radius: 0.8rem;

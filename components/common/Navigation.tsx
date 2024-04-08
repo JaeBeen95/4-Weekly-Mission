@@ -17,14 +17,16 @@ const Navigation = ({ position = "sticky", url = apiURL }: navigationProps) => {
   return (
     <nav className={`${styles.navigation} ${styles[position]}`}>
       <div className={styles.wrap}>
-        <Link href="/">
-          <Image
-            src={linkbrary}
-            alt="링크브러리 로고"
-            width={133}
-            height={24}
-            priority
-          />
+        <Link href="/" passHref>
+          <a>
+            <Image
+              src={linkbrary}
+              alt="링크브러리 로고"
+              width={133}
+              height={24}
+              priority
+            />
+          </a>
         </Link>
         {user ? (
           <div className={styles.myProfile}>
@@ -36,7 +38,7 @@ const Navigation = ({ position = "sticky", url = apiURL }: navigationProps) => {
             <span className={styles.profileEmail}>{user.email}</span>
           </div>
         ) : (
-          <Link href="/">
+          <Link href="/" passHref>
             <span className={styles.signIn}>로그인</span>
           </Link>
         )}

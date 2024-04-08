@@ -32,18 +32,18 @@ const FolderToolBar = ({
   };
 
   return (
-    <div className={styles.FolderToolBarContainer}>
-      <div className={styles.FolderToolBarHeader}>
-        <div className={styles.FolderButtonGroup}>
+    <div className={styles.folderToolBarContainer}>
+      <div className={styles.folderToolBarHeader}>
+        <div className={styles.folderButtonGroup}>
           <FolderButton
             folderData={folderData}
             onFolderSelect={onFolderSelect}
             selectedButtonName={selectedButtonName}
           />
         </div>
-        <div className={styles.AddFolderButtonWrapper}>
+        <div className={styles.addFolderButtonWrapper}>
           <button
-            className={styles.AddFolderButton}
+            className={styles.addFolderButton}
             onClick={() => {
               handleModalOpen({
                 title: "폴더 추가",
@@ -55,23 +55,23 @@ const FolderToolBar = ({
             폴더 추가 +
           </button>
         </div>
-        <h2 className={styles.SelectedFolderName}>{selectedButtonName}</h2>
+        <h2 className={styles.selectedFolderName}>{selectedButtonName}</h2>
         {selectedButtonName !== ALL && (
-          <div className={styles.FolderActionButtonGroup}>
+          <div className={styles.folderActionButtonGroup}>
             <button
-              className={styles.FolderActionButton}
+              className={styles.folderActionButton}
               onClick={() => {
                 handleModalOpen({ title: "폴더 공유", modalGroup: "share" });
               }}
             >
               <Image
-                className={styles.ActionButtonIcon}
+                className={styles.actionButtonIcon}
                 src={share}
                 alt="폴더 공유 버튼"
               />
             </button>
             <button
-              className={styles.FolderActionButton}
+              className={styles.folderActionButton}
               onClick={() => {
                 handleModalOpen({
                   title: "폴더 이름 변경",
@@ -81,13 +81,13 @@ const FolderToolBar = ({
               }}
             >
               <Image
-                className={styles.ActionButtonIcon}
+                className={styles.actionButtonIcon}
                 src={pen}
                 alt="폴더 이름 변경 버튼"
               />
             </button>
             <button
-              className={styles.FolderActionButton}
+              className={styles.folderActionButton}
               onClick={() =>
                 handleModalOpen({
                   title: "폴더 삭제",
@@ -97,7 +97,7 @@ const FolderToolBar = ({
               }
             >
               <Image
-                className={styles.ActionButtonIcon}
+                className={styles.actionButtonIcon}
                 src={deleteIcon}
                 alt="폴더 삭제 버튼"
               />

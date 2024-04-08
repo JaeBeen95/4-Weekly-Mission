@@ -44,34 +44,34 @@ const FolderCardList = ({
   };
 
   return (
-    <div className={styles.CardListWrapper}>
+    <div className={styles.cardListWrapper}>
       {filteredItems?.map(
         ({ id, url, image_source, description, created_at }) => (
           <Link key={id} href={url} target="_blank" rel="noopener noreferrer">
-            <div className={styles.Card}>
+            <div className={styles.card}>
               <div
-                className={styles.CardImg}
+                className={styles.cardImg}
                 style={{ backgroundImage: `url(${image_source})` }}
               />
-              <div className={styles.CardContent}>
-                <span className={styles.ElapsedTime}>
+              <div className={styles.cardContent}>
+                <span className={styles.elapsedTime}>
                   {elapsedTime(created_at)}
                 </span>
-                <p className={styles.Description}>{description}</p>
-                <span className={styles.CreatedAt}>
+                <p className={styles.description}>{description}</p>
+                <span className={styles.createdAt}>
                   {formatCreatedAt(created_at)}
                 </span>
               </div>
               <button
-                className={styles.EditButton}
+                className={styles.editButton}
                 onClick={(e) => togglePopover(id, e)}
               >
                 <Image src={kebab} alt="Edit" />
                 {popoverShows[id] && (
-                  <div className={styles.Popover}>
-                    <ul className={styles.PopoverList}>
+                  <div className={styles.popover}>
+                    <ul className={styles.popoverList}>
                       <li
-                        className={styles.PopoverItem}
+                        className={styles.popoverItem}
                         onClick={(e) =>
                           handlePopoverClick(e, id, {
                             title: "링크 삭제",
@@ -83,7 +83,7 @@ const FolderCardList = ({
                         삭제하기
                       </li>
                       <li
-                        className={styles.PopoverItem}
+                        className={styles.popoverItem}
                         onClick={(e) =>
                           handlePopoverClick(e, id, {
                             title: "폴더에 추가",

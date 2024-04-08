@@ -44,34 +44,40 @@ const ModalShare = ({ closeModal, modalTitle }: modal) => {
             <p>폴더명</p>
           </div>
           <div className={styles.modalShareContent}>
-            <Link
+            <a
               href="/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.modalSns}
             >
-              <Image src={kakaoImg} alt="" className={styles.kakaoImg} />
+              <span className={styles.kakaoImg}>
+                <Image src={kakaoImg} alt="카카오톡" />
+              </span>
               <p>카카오톡</p>
-            </Link>
-            <Link
+            </a>
+            <a
               href={facebookShareUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.modalSns}
             >
-              <Image src={facebookImg} alt="" className={styles.facebookImg} />
+              <span className={styles.facebookImg}>
+                <Image src={facebookImg} alt="페이스북" />
+              </span>
               <p>페이스북</p>
-            </Link>
-            <Link
+            </a>
+            <a
               href="/"
               onClick={copyToClipboard}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.modalSns}
             >
-              <Image src={linkImg} alt="" className={styles.linkImg} />
+              <span className={styles.linkImg}>
+                <Image src={linkImg} alt="링크 복사" />
+              </span>
               <p>링크 복사</p>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

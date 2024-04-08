@@ -8,9 +8,9 @@ const FolderButton = ({
   selectedButtonName,
 }: folderToolBarProps) => {
   return (
-    <div className={styles.FolderButtonWrapper}>
+    <div className={styles.folderButtonWrapper}>
       <button
-        className={styles.FolderButton}
+        className={styles.folderButton}
         data-selected={selectedButtonName === ALL}
         onClick={() => {
           onFolderSelect?.(ALL);
@@ -21,7 +21,7 @@ const FolderButton = ({
       {folderData.map(({ id, name }) => (
         <button
           key={id}
-          className={styles.FolderButton}
+          className={styles.folderButton}
           data-selected={selectedButtonName === name}
           onClick={() => {
             onFolderSelect && onFolderSelect(id, name);

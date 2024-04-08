@@ -16,7 +16,9 @@ const SearchBar = ({ onSearch }: searchBarProps) => {
         placeholder="링크를 검색해 보세요."
         onChange={handleSearch}
       />
-      <Image className={styles.icon} src={searchImg} alt="돋보기 아이콘" />
+      <div className={styles.icon}>
+        <Image src={searchImg} alt="돋보기 아이콘" width={16} height={16} />
+      </div>
     </div>
   );
 };

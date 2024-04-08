@@ -27,17 +27,19 @@ const SNS_LIST = [
 
 const Footer = () => {
   return (
-    <footer className={styles.Footer}>
-      <div className={styles.Wrap}>
-        <div className={styles.PolicyAndFaq}>Privacy Policy FAQ</div>
-        <div className={styles.Sns}>
+    <footer className={styles.footer}>
+      <div className={styles.wrap}>
+        <div className={styles.policyAndFaq}>Privacy Policy FAQ</div>
+        <div className={styles.sns}>
           {SNS_LIST.map(({ name, href, logo }) => (
-            <Link key={name} href={href}>
-              <Image src={logo} alt={name} width={24} height={24} />
+            <Link key={name} href={href} passHref>
+              <a>
+                <Image src={logo} alt={name} width={24} height={24} />
+              </a>
             </Link>
           ))}
         </div>
-        <span className={styles.Address}>©codeit - 2023</span>
+        <span className={styles.address}>©codeit - 2023</span>
       </div>
     </footer>
   );

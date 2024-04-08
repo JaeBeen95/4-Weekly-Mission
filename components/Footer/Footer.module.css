@@ -1,4 +1,4 @@
-.Footer {
+.footer {
   position: absolute;
   bottom: 0;
   display: flex;
@@ -10,12 +10,12 @@
 }
 
 @media (min-width: 768px) {
-  .Footer {
+  .footer {
     margin-top: 6rem;
   }
 }
 
-.Wrap {
+.wrap {
   display: grid;
   justify-content: space-between;
   grid-template-areas:
@@ -30,7 +30,7 @@
 }
 
 @media (min-width: 768px) {
-  .Wrap {
+  .wrap {
     grid-template-areas: "address policy-and-fap sns";
     height: fit-content;
     max-width: 192rem;
@@ -38,14 +38,14 @@
   }
 }
 
-.Address {
+.address {
   grid-area: address;
   color: var(--gray80);
   font-family: Arial;
   font-size: 1.6rem;
 }
 
-.PolicyAndFaq {
+.policyAndFaq {
   grid-area: policy-and-fap;
   display: flex;
   column-gap: 3rem;
@@ -55,7 +55,7 @@
   font-size: 1.6rem;
 }
 
-.Sns {
+.sns {
   grid-area: sns;
   display: flex;
   column-gap: 1.2rem;

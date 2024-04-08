@@ -8,7 +8,7 @@ import Image from "next/image";
 const InputSection = ({ folderData }: InputSectionProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent): void => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsModalOpen(true);
   };
@@ -18,14 +18,14 @@ const InputSection = ({ folderData }: InputSectionProps) => {
   };
 
   return (
-    <div className={styles.InputSection}>
-      <form className={styles.InputForm} onSubmit={handleSubmit}>
-        <div className={styles.InputBox}>
+    <div className={styles.inputSection}>
+      <form className={styles.inputForm} onSubmit={handleSubmit}>
+        <div className={styles.inputBox}>
           <Image src={linkImg} alt="" />
-          <input className={styles.Input} placeholder="링크를 추가해보세요" />
+          <input className={styles.input} placeholder="링크를 추가해보세요" />
         </div>
-        <button className={styles.LinkButton} type="submit">
-          <div className={styles.CTA}>추가하기</div>
+        <button className={styles.linkButton} type="submit">
+          <div className={styles.cta}>추가하기</div>
         </button>
       </form>
       {isModalOpen && (
