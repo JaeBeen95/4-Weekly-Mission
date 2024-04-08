@@ -21,7 +21,7 @@ const InputSection = ({ folderData }: InputSectionProps) => {
     <div className={styles.inputSection}>
       <form className={styles.inputForm} onSubmit={handleSubmit}>
         <div className={styles.inputBox}>
-          <Image src={linkImg} alt="" />
+          <Image src={linkImg} alt="링크이미지" />
           <input className={styles.input} placeholder="링크를 추가해보세요" />
         </div>
         <button className={styles.linkButton} type="submit">
