@@ -39,7 +39,7 @@ const ModalMap = ({
   modalTitle,
   modalButtonName,
 }: ModalMapProps) => {
-  if (modalGroup === null) return null;
+  if (!modalGroup) return null;
 
   const ModalComponent = MODAL_MAP[modalGroup];
 
