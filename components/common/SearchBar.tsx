@@ -1,9 +1,9 @@
-import { searchBarProps } from "../../types/folder.type";
+import { SearchBarProps } from "../../types/folder.type";
 import searchImg from "../../public/icons/search.svg";
 import Image from "next/image";
 import styles from "./SearchBar.module.css";
 
-const SearchBar = ({ onSearch }: searchBarProps) => {
+const SearchBar = ({ onSearch }: SearchBarProps) => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value;
     onSearch(searchTerm);

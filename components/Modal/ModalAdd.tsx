@@ -1,6 +1,6 @@
 import { useState } from "react";
 import closeBtn from "../../public/icons/close.svg";
-import { modal, FolderId } from "../../types/modal.type";
+import { Modal, FolderId } from "../../types/modal.type";
 import Image from "next/image";
 import styles from "./ModalAdd.module.css";
 
@@ -9,7 +9,7 @@ const ModalAdd = ({
   closeModal,
   modalTitle,
   modalButtonName,
-}: modal) => {
+}: Modal) => {
   const [isButtonClick, setIsButtonClick] = useState<FolderId>(null);
 
   const handleClick = (id: FolderId) => {

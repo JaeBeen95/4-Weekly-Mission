@@ -3,8 +3,8 @@ import FolderButton from "./FolderButton";
 import FolderCardList from "./FolderCardList";
 import ModalMap from "../Modal/ModalMap";
 import { ALL } from "../../utils/utils";
-import { folderToolBarProps } from "../../types/folder.type";
-import { handleModal } from "../../types/modal.type";
+import { FolderToolBarProps } from "../../types/folder.type";
+import { HandleModalType } from "../../types/modal.type";
 import styles from "./FolderToolBar.module.css";
 import share from "../../public/icons/share.svg";
 import pen from "../../public/icons/pen.svg";
@@ -16,7 +16,7 @@ const FolderToolBar = ({
   filteredItems,
   selectedButtonName,
   onFolderSelect,
-}: folderToolBarProps) => {
+}: FolderToolBarProps) => {
   const {
     isModalOpen,
     openModal,
@@ -27,7 +27,11 @@ const FolderToolBar = ({
     modalButtonName,
   } = useModal();
 
-  const handleModalOpen = ({ title, buttonName, modalGroup }: handleModal) => {
+  const handleModalOpen = ({
+    title,
+    buttonName,
+    modalGroup,
+  }: HandleModalType) => {
     openModal(true, title, buttonName, modalGroup);
   };
 

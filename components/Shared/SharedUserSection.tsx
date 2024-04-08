@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { UserType } from "../../types/shared.interface";
+import { UserType } from "../../types/shared.type";
 import { fetchData } from "./SharedUserfetchData";
 import styles from "./SharedUserSection.module.css";
 import Image from "next/image";

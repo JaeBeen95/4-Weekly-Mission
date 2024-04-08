@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { elapsedTime } from "../../utils/utils";
 import { fetchData } from "./fetchData";
 import { formatCreatedAt } from "../../utils/utils";
-import { cardListType } from "../../types/shared.interface";
+import { CardListType } from "../../types/shared.type";
 import styles from "./SharedCardList.module.css";
 import Link from "next/link";
 
 const CardList = () => {
-  const [cardList, setCardList] = useState<cardListType[]>([]);
+  const [cardList, setCardList] = useState<CardListType[]>([]);
 
   useEffect(() => {
     fetchData().then((data) => {

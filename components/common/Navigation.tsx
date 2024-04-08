@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { navigationProps, userType } from "../../types/navigation.interface";
+import { NavigationProps, UserType } from "../../types/navigation.type";
 import linkbrary from "../../public/icons/linkbrary.svg";
 import profileImg from "../../public/icons/myprofile.svg";
 import { apiURL, fetchData } from "./fetchData";
@@ -7,8 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navigation.module.css";
 
-const Navigation = ({ position = "sticky", url = apiURL }: navigationProps) => {
-  const [user, setUser] = useState<null | userType>(null);
+const Navigation = ({ position = "sticky", url = apiURL }: NavigationProps) => {
+  const [user, setUser] = useState<null | UserType>(null);
 
   useEffect(() => {
     fetchData().then((data) => setUser(data));

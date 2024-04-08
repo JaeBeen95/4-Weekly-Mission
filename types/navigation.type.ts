@@ -1,9 +1,9 @@
-export interface navigationProps {
+export interface NavigationProps {
   position?: string;
   url?: string;
 }
 
-export interface userType {
+export interface UserType {
   email: string;
   id: number;
   name: string;

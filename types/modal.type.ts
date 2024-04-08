@@ -1,10 +1,10 @@
-import { folderDataType } from "@/types/folder.type";
+import { FolderDataType } from "@/types/folder.type";
 
 interface ModalComponentProps {
   closeModal: () => void;
   modalTitle: string;
   modalButtonName?: string;
-  folderData?: folderDataType[];
+  folderData?: FolderDataType[];
   linkId?: number | null;
 }
 
@@ -17,7 +17,7 @@ export interface ModalMapProps {
   closeModal: () => void;
   modalTitle: string;
   modalButtonName?: string;
-  folderData?: folderDataType[];
+  folderData?: FolderDataType[];
   linkId?: number | null;
 }
 
@@ -27,15 +27,15 @@ export type ModalType = string | undefined;
 
 export type FolderId = number | null;
 
-export interface modal {
+export interface Modal {
   linkId?: number | null;
-  folderData?: folderDataType[];
+  folderData?: FolderDataType[];
   closeModal: () => void;
   modalTitle?: string;
   modalButtonName?: string;
 }
 
-export interface handleModal {
+export interface HandleModalType {
   title: string;
   buttonName?: string;
   modalGroup: ModalGroup;

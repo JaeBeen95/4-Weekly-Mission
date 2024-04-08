@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import useSearch from "../hooks/useSearch";
 import { fetchFolders, fetchLinks } from "../components/Folder/fetchData";
-import { folderDataType, linksType, FolderId } from "../types/folder.type";
+import { FolderDataType, LinksType, FolderId } from "../types/folder.type";
 import { ALL } from "../utils/utils";
 import Footer from "../components/Footer/Footer";
 import Navigation from "../components/common/Navigation";
@@ -11,8 +11,8 @@ import FolderToolBar from "../components/Folder/FolderToolBar";
 import styles from "../styles/page.module.css";
 
 const Folder = () => {
-  const [folderData, setFolderData] = useState<folderDataType[]>([]);
-  const [links, setLinks] = useState<linksType[]>([]);
+  const [folderData, setFolderData] = useState<FolderDataType[]>([]);
+  const [links, setLinks] = useState<LinksType[]>([]);
   const [selectedButtonName, setSelectedButtonName] = useState(ALL);
 
   const { setSearchKeyword, filteredItems } = useSearch(links, [

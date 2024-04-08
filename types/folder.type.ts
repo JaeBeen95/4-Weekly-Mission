@@ -3,7 +3,7 @@ import { ModalGroup } from "./modal.type";
 
 export type FolderId = typeof ALL | number;
 
-export interface folderDataType {
+export interface FolderDataType {
   created_at: string;
   favorite: boolean;
   id: number;
@@ -13,10 +13,10 @@ export interface folderDataType {
 }
 
 export interface InputSectionProps {
-  folderData: folderDataType[];
+  folderData: FolderDataType[];
 }
 
-export interface linksType extends folderDataType {
+export interface LinksType extends FolderDataType {
   description: string;
   image_source: string;
   title: string;
@@ -24,14 +24,14 @@ export interface linksType extends folderDataType {
   url: string;
 }
 
-export interface folderToolBarProps {
-  folderData: folderDataType[];
-  filteredItems?: linksType[];
+export interface FolderToolBarProps {
+  folderData: FolderDataType[];
+  filteredItems?: LinksType[];
   selectedButtonName?: string;
   onFolderSelect?: (folderId: typeof ALL | number, folderName?: string) => void;
 }
 
-export interface folderCardListProps extends folderToolBarProps {
+export interface FolderCardListProps extends FolderToolBarProps {
   isModalOpen?: boolean;
   modalGroup: ModalGroup | null;
   openModal: (
@@ -46,6 +46,6 @@ export interface folderCardListProps extends folderToolBarProps {
   modalButtonName?: string;
 }
 
-export interface searchBarProps {
+export interface SearchBarProps {
   onSearch: (searchTerm: string) => void;
 }

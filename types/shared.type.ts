@@ -1,24 +1,24 @@
-import { folderDataType } from "./folder.type";
+import { FolderDataType } from "./folder.type";
 
-interface ownerType {
+interface OwnerType {
   id: number;
   name: string;
   profileImageSource: string;
 }
 
-interface folderType {
+interface FolderType {
   count: number;
   id: number;
-  links: folderDataType[];
+  links: FolderDataType[];
   name: string;
-  owner: ownerType;
+  owner: OwnerType;
 }
 
 export interface UserType {
-  folder: folderType;
+  folder: FolderType;
 }
 
-export interface cardListType {
+export interface CardListType {
   createdAt: string;
   description: string;
   id: number;

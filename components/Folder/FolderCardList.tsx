@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { elapsedTime, formatCreatedAt } from "../../utils/utils";
-import { folderCardListProps } from "../../types/folder.type";
-import { handleModal } from "../../types/modal.type";
+import { FolderCardListProps } from "../../types/folder.type";
+import { HandleModalType } from "../../types/modal.type";
 import ModalMap from "../Modal/ModalMap";
 import kebab from "../../public/icons/kebab.svg";
 import styles from "./FolderCardList.module.css";
@@ -18,7 +18,7 @@ const FolderCardList = ({
   modalTitle,
   modalButtonName,
   folderData,
-}: folderCardListProps) => {
+}: FolderCardListProps) => {
   const [popoverShows, setPopoverShows] = useState<{ [key: number]: boolean }>(
     {}
   );
@@ -35,7 +35,7 @@ const FolderCardList = ({
   const handlePopoverClick = (
     e: React.MouseEvent,
     id: number,
-    { title, buttonName, modalGroup }: handleModal
+    { title, buttonName, modalGroup }: HandleModalType
   ) => {
     e.preventDefault();
     setSelectedLinkId(id);

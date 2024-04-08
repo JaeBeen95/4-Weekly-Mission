@@ -1,4 +1,4 @@
-import { modal } from "../../types/modal.type";
+import { Modal } from "../../types/modal.type";
 import closeBtn from "../../public/icons/close.svg";
 import kakaoImg from "../../public/icons/kakao.svg";
 import facebookImg from "../../public/icons/facebook.svg";
@@ -7,7 +7,7 @@ import Image from "next/image";
 import styles from "./ModalShare.module.css";
 import Link from "next/link";
 
-const ModalShare = ({ closeModal, modalTitle }: modal) => {
+const ModalShare = ({ closeModal, modalTitle }: Modal) => {
   const hostAddress = "https://yourdomain.com"; // 각자 주소 바꾸기
   const shareUrl = `${hostAddress}/shared/${1}`; // id값도 바꾸기
   const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(

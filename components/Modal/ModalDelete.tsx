@@ -1,9 +1,9 @@
 import closeBtn from "../../public/icons/close.svg";
-import { modal } from "../../types/modal.type";
+import { Modal } from "../../types/modal.type";
 import Image from "next/image";
 import styles from "./ModalDelete.module.css";
 
-const ModalDelete = ({ closeModal, modalTitle, modalButtonName }: modal) => {
+const ModalDelete = ({ closeModal, modalTitle, modalButtonName }: Modal) => {
   return (
     <>
       <div className={styles.modalBg} />
